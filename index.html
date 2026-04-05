@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Log | Open Trip Booking</title>
+    <!-- Tailwind CSS for styling -->
+     <link rel="stylesheet" href="CSS/style.css">
+     <script src="JS/script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: { 500: '#10b981', 600: '#059669', 900: '#064e3b' },
+                        dark: '#121212',
+                        darker: '#0a0a0a'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased font-sans flex flex-col min-h-screen">
+
+    <!-- Sticky Navbar -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-brand-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="font-black text-2xl tracking-tighter text-gray-900 cursor-pointer" onclick="navigate('home')">TRI<span class="text-brand-500">PIRAX</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8 font-semibold text-sm text-gray-600">
+                    <a href="#" onclick="navigate('home')" class="hover:text-brand-600 transition">Beranda</a>
+                    <a href="#" onclick="navigate('destinasi')" class="hover:text-brand-600 transition">Destinasi</a>
+                    <a href="#" onclick="navigate('galeri')" class="hover:text-brand-600 transition">Galeri</a>
+                    <button onclick="navigate('booking')" class="bg-brand-600 text-white px-6 py-2.5 rounded-full hover:bg-brand-900 transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        Booking Sekarang
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow">
+        
+        <!-- ================= BERANDA PAGE ================= -->
+        <section id="home" class="page-section active relative">
+            <div class="relative h-[85vh] flex items-center justify-center">
+                <div class="absolute inset-0 w-full h-full">
+                    <img src="Background/gunung.jpg" alt="Mountain Hero" class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 bg-gray-900/60 mix-blend-multiply"></div>
+                </div>
+                <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+                    <span class="text-brand-500 font-bold tracking-widest uppercase text-sm mb-4 block">Open Trip & Private Trip</span>
+                    <h1 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">Jelajahi Puncak <br>Nusantara.</h1>
+                    <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto">Kami menyediakan pengalaman pendakian terbaik dengan fasilitas premium, porter berpengalaman, dan keamanan terjamin.</p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <button onclick="navigate('destinasi')" class="bg-white text-gray-900 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition shadow-lg">Lihat Destinasi</button>
+                        <button onclick="navigate('booking')" class="bg-brand-600 text-white px-8 py-4 rounded-full font-bold hover:bg-brand-500 transition shadow-lg">Mulai Petualangan</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= DESTINASI & HARGA PAGE ================= -->
+        <section id="destinasi" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-gray-900 mb-4">Daftar Gunung & Harga</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Pilih destinasi impian Anda. Harga di bawah sudah termasuk tiket masuk, makan selama pendakian, tenda, dan porter kelompok.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                 <!-- Card 1 (Gn. Prau) -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300">
+                    <img src="https://i.pinimg.com/736x/1c/36/2e/1c362e1336a6f78ad4b8b38aab2c03a0.jpg" alt="Prau" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900">Gunung Prau</h3>
+                                <p class="text-sm text-gray-500">2.565 mdpl • Jawa Tengah</p>
+                            </div>
+                            <span class="bg-gray-100 text-gray-800 text-xs font-bold px-3 py-1 rounded-full">Pemula</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-6">Terkenal dengan golden sunrise terbaik di Asia Tenggara dan padang sabana yang indah.</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="text-2xl font-black text-brand-600">Rp 650.000</span>
+                            <button onclick="bookSpecific('Prau')" class="text-sm font-bold text-white bg-gray-900 px-4 py-2 rounded-lg hover:bg-gray-800">Pilih</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: BEST SELLER (Gn. Gede) -->
+                <div class="bg-white rounded-2xl shadow-2xl overflow-hidden border-2 border-brand-500 transform md:-translate-y-4 relative">
+                    <div class="absolute top-4 right-4 bg-red-500 text-white text-xs font-black px-3 py-1.5 rounded-full shadow-lg z-10 animate-pulse">
+                        🔥 BEST SELLER
+                    </div>
+                    <img src="https://indonesia-az.com/wp-content/uploads/2024/01/Pendakian-Gunung-Gede-Indonesia-A-Z.jpeg" alt="Gede" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900">Gunung Gede</h3>
+                                <p class="text-sm text-gray-500">2.958 mdpl • Jawa Barat</p>
+                            </div>
+                            <span class="bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full">Menengah</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-6">Gunung ini bagian dari Taman Nasional Gede Pangrango (TNGGP). Populer untuk pendakian, Gede memiliki keindahan kawah aktif, Alun-alun Suryakencana (padang edelweiss), dan jalur pendakian seperti Cibodas, Putri, dan Selabintana. .</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="text-2xl font-black text-brand-600">Rp 360.000</span>
+                            <button onclick="bookSpecific('Gede')" class="text-sm font-bold text-white bg-brand-600 px-4 py-2 rounded-lg hover:bg-brand-700">Pilih</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 (Gn. Rinjani) -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300">
+                    <img src="https://i.pinimg.com/1200x/87/e7/21/87e72165d8b9d184bc9b39d88c4508f9.jpg" alt="Rinjani" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900">Gunung Rinjani</h3>
+                                <p class="text-sm text-gray-500">3.726 mdpl • Lombok</p>
+                            </div>
+                            <span class="bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full">Ahli</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-6">Danau Segara Anak yang memukau dan pengalaman mendaki gunung berapi tertinggi kedua di Indonesia.</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="text-2xl font-black text-brand-600">Rp 800.000</span>
+                            <button onclick="bookSpecific('Rinjani')" class="text-sm font-bold text-white bg-gray-900 px-4 py-2 rounded-lg hover:bg-gray-800">Pilih</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 (Gn. Papandayan) -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300">
+                    <img src="https://tribratanews.polri.go.id/web/image/blog.post/62406/image" alt="Papandayan" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900">Gunung Papandayan</h3>
+                                <p class="text-sm text-gray-500">2.665 mdpl • Jawa Barat</p>
+                            </div>
+                            <span class="bg-gray-100 text-gray-800 text-xs font-bold px-3 py-1 rounded-full">Pemula</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-6">Dikenal dengan kawah aktif, padang edelweiss, dan jalur pendakian yang ramah untuk pemula.</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="text-2xl font-black text-brand-600">Rp 450.000</span>
+                            <button onclick="bookSpecific('Papandayan')" class="text-sm font-bold text-white bg-gray-900 px-4 py-2 rounded-lg hover:bg-gray-800">Pilih</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5 (Gn. Sindoro) -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300">
+                    <img src="https://gearberg.com/storage/mountain/galleries/673aa501b8ed3.png" alt="Sindoro" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900">Gunung Sindoro</h3>
+                                <p class="text-sm text-gray-500">3.153 mdpl • Jawa Tengah</p>
+                            </div>
+                            <span class="bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full">Menengah</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-6">Gunung yang menawarkan pemandangan alam yang indah dan tantangan yang sesuai untuk pendaki menengah.</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="text-2xl font-black text-brand-600">Rp 600.000</span>
+                            <button onclick="bookSpecific('Sindoro')" class="text-sm font-bold text-white bg-gray-900 px-4 py-2 rounded-lg hover:bg-gray-800">Pilih</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 6 (Gn. Kerinci) -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Uprising-mount_kerinci.jpg" alt="Kerinci" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900">Gunung Kerinci</h3>
+                                <p class="text-sm text-gray-500">3.805 mdpl • Sumatra</p>
+                            </div>
+                            <span class="bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full">Ahli</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-6">Gunung tertinggi di Sumatra dengan keindahan alam yang luar biasa dan tantangan pendakian yang menantang.</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="text-2xl font-black text-brand-600">Rp 900.000</span>
+                            <button onclick="bookSpecific('Kerinci')" class="text-sm font-bold text-white bg-gray-900 px-4 py-2 rounded-lg hover:bg-gray-800">Pilih</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= GALERI PAGE ================= -->
+        <section id="galeri" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black text-gray-900 mb-4">Galeri Petualangan</h2>
+                <p class="text-gray-500">Momen-momen tak terlupakan dari perjalanan klien kami.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/1200x/71/1f/fe/711ffe8f7bf231f3491cc370148307dd.jpg" alt="Everest">
+                    <div class="overlay">
+                        <span>Puncak Abadi</span>
+                        <p class="text-sm text-gray-300 mt-2">Menembus batas awan</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://img.antaranews.com/cache/1200x800/2024/01/17/gunung-rinjani-1.jpg.webp" alt="Rinjani">
+                    <div class="overlay">
+                        <span>Segara Anak</span>
+                        <p class="text-sm text-gray-300 mt-2">Ketenangan di atas awan</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://imgcdn.espos.id/@espos/images/2021/11/Gunung-Prau-Kabupaten-Wonosobo.jpg?quality=60" alt="Prau">
+                    <div class="overlay">
+                        <span>Golden Sunrise</span>
+                        <p class="text-sm text-gray-300 mt-2">Mentari pagi Gn. Prau</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://wahananews.co/photo/berita/dir082021/_6663_Semeru--Gunung-Favorit-Pendaki-Indonesia.jpg" alt="Semeru">
+                    <div class="overlay">
+                        <span>Jalur Mahameru</span>
+                        <p class="text-sm text-gray-300 mt-2">Pasir berbisik Semeru</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://travelspromo.com/wp-content/uploads/2021/09/Spot-camping-terbaik-di-Gunung-Gede-Anggana-J.jpg" alt="Gede">
+                    <div class="overlay">
+                        <span>Padang Edelweiss</span>
+                        <p class="text-sm text-gray-300 mt-2">Alun-Alun Suryakencana</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://catatanalam.wordpress.com/wp-content/uploads/2019/04/img_20181223_055300.jpg" alt="Sindoro">
+                    <div class="overlay">
+                        <span>Puncak Sindoro</span>
+                        <p class="text-sm text-gray-300 mt-2">Puncak dengan kawah aktif</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://cdn2.gnfi.net/gnfi/uploads/images/2024/12/kawah-papandayanjpg" alt="Papandayan">
+                    <div class="overlay">
+                        <span>Kawah From Papandayan</span>
+                        <p class="text-sm text-gray-300 mt-2">Landscape alami yang sangat menakjubkan</p>
+                    </div>
+                </div>
+                    <div class="gallery-item">
+                        <img src="https://radarbanyumas.disway.id/upload/25ea54128fd440ca2d4b8268a8caf6bf.jpg" alt="Kerinci">
+                        <div class="overlay">
+                            <span>Atap Sumatra</span>
+                            <p class="text-sm text-gray-300 mt-2"> "Bukan gunung yang kita taklukkan, tapi diri kita sendiri."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= BOOKING PAGE ================= -->
+        <section id="booking" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            
+            <!-- Panduan Cara Booking (Baru) -->
+            <div class="mb-10 bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-5 flex items-center">
+                    <svg class="w-6 h-6 mr-2 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Panduan Cara Booking
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="flex flex-col">
+                        <span class="font-black text-brand-600 text-2xl mb-1">01</span>
+                        <strong class="text-gray-800">Pilih Destinasi</strong>
+                        <p class="text-gray-500 text-sm mt-1">Pilih gunung tujuan Anda pada kolom formulir di bawah.</p>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-black text-brand-600 text-2xl mb-1">02</span>
+                        <strong class="text-gray-800">Isi Data KTP</strong>
+                        <p class="text-gray-500 text-sm mt-1">Masukkan nama lengkap sesuai identitas untuk asuransi pendakian.</p>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-black text-brand-600 text-2xl mb-1">03</span>
+                        <strong class="text-gray-800">Tentukan Tanggal</strong>
+                        <p class="text-gray-500 text-sm mt-1">Pilih tanggal keberangkatan yang sesuai dengan rencana trip Anda.</p>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-black text-brand-600 text-2xl mb-1">04</span>
+                        <strong class="text-gray-800">Simpan & Selesai</strong>
+                        <p class="text-gray-500 text-sm mt-1">Klik tombol simpan dan pastikan jadwal masuk ke dalam Manifest.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-10">
+                <!-- Form Area -->
+                <div class="w-full lg:w-1/3">
+                    <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+                        <h2 class="text-2xl font-black text-gray-900 mb-2">Formulir Pendaftaran</h2>
+                        <p class="text-sm text-gray-500 mb-8">Data harus sesuai KTP/Paspor untuk keperluan asuransi pendakian.</p>
+
+                        <!-- Dinamis Promo Box -->
+                        <div class="mb-6 p-4 bg-brand-50 border border-brand-200 rounded-xl flex items-start">
+                            <svg class="w-6 h-6 text-brand-600 mr-3 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-brand-900 text-sm">Saran Perjalanan</h4>
+                                <p id="promo-text" class="text-xs text-brand-700 mt-1">Saat ini <strong>Gunung ${topGunung}</strong> sedang menjadi tren! Amankan kursi Anda sebelum kehabisan.</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-5">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Nama Lengkap</label>
+                                <input type="text" id="nama" placeholder="Sesuai KTP" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Destinasi</label>
+                                <select id="gunung" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition bg-white cursor-pointer">
+                                    <option value="" data-price="0">-- Pilih Gunung --</option>
+                                    <option value="Prau" data-price="650000">Gunung Prau - Rp 650.000</option>
+                                    <option value="Gede" data-price="1500000">Gunung Gede - Rp 360.000</option>
+                                    <option value="Rinjani" data-price="2800000">Gunung Rinjani - Rp 800.000</option>
+                                    <option value="Papandayan" data-price="900000">Gunung Papandayan - Rp 450.000</option>
+                                    <option value="Sindoro" data-price="1200000">Gunung Sindoro - Rp 600.000</option>
+                                    <option value="Kerinci" data-price="3500000">Gunung Kerinci - Rp 900.000</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Tanggal Keberangkatan</label>
+                                <input type="date" id="tanggal" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition">
+                            </div>
+                            <button onclick="saveBooking()" class="w-full bg-brand-600 text-white font-bold py-4 rounded-xl shadow-lg hover:bg-brand-700 hover:shadow-xl transition duration-300 mt-4">
+                                SIMPAN JADWAL
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table Area -->
+                <div class="w-full lg:w-2/3">
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 flex flex-col h-full">
+                        <div class="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+                            <h3 class="text-xl font-black text-gray-900">Manifest Keberangkatan</h3>
+                            <span id="counter" class="bg-brand-100 text-brand-800 text-xs font-bold px-3 py-1.5 rounded-full">0 Pesanan</span>
+                        </div>
+                        <div class="overflow-x-auto p-0 flex-grow">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-white text-gray-500 text-sm uppercase tracking-wider border-b border-gray-200">
+                                        <th class="p-4 font-semibold">Tgl Daftar</th>
+                                        <th class="p-4 font-semibold">Pendaki</th>
+                                        <th class="p-4 font-semibold">Tujuan</th>
+                                        <th class="p-4 font-semibold">Tanggal Naik</th>
+                                        <th class="p-4 font-semibold">Biaya</th>
+                                        <th class="p-4 font-semibold text-right">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="booking-list" class="divide-y divide-gray-100 text-sm">
+                                    <!-- List akan di render via JS -->
+                                </tbody>
+                            </table>
+                            <div id="empty-state" class="text-center py-16 text-gray-400">
+                                <svg class="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                </svg>
+                                <p>Belum ada manifest pendaftaran.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-darker py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <span class="font-black text-xl tracking-tighter text-white">TRI<span class="text-brand-500">PIRAX</span></span>
+            <p class="text-gray-500 text-sm mt-2">&copy; 2026 TRIPIRAX Open Trip. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- Custom Toast Notification Element -->
+    <div id="toast">Notifikasi!</div>
+</body>
+</html>
