@@ -49,10 +49,9 @@
         </div>
     </nav>
 
-    <!-- Main Content Area -->
     <main class="flex-grow">
         
-        <!-- ================= BERANDA PAGE ================= -->
+        <!--beranda-->
         <section id="home" class="page-section active relative">
             <div class="relative h-[85vh] flex items-center justify-center">
                 <div class="absolute inset-0 w-full h-full">
@@ -71,7 +70,7 @@
             </div>
         </section>
 
-        <!-- ================= DESTINASI & HARGA PAGE ================= -->
+    <!--destinasi-->
         <section id="destinasi" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-black text-gray-900 mb-4">Daftar Gunung & Harga</h2>
@@ -79,7 +78,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                 <!-- Card 1 (Gn. Prau) -->
+                 <!--Gn. Prau-->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300">
                     <img src="https://i.pinimg.com/736x/1c/36/2e/1c362e1336a6f78ad4b8b38aab2c03a0.jpg" alt="Prau" class="w-full h-56 object-cover">
                     <div class="p-6">
@@ -98,7 +97,7 @@
                     </div>
                 </div>
 
-                <!-- Card 2: BEST SELLER (Gn. Gede) -->
+                <!--Gn. Gede-->
                 <div class="bg-white rounded-2xl shadow-2xl overflow-hidden border-2 border-brand-500 transform md:-translate-y-4 relative">
                     <div class="absolute top-4 right-4 bg-red-500 text-white text-xs font-black px-3 py-1.5 rounded-full shadow-lg z-10 animate-pulse">
                         🔥 BEST SELLER
@@ -120,7 +119,7 @@
                     </div>
                 </div>
 
-                <!-- Card 3 (Gn. Rinjani) -->
+                <!--Gn. Rinjani-->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300">
                     <img src="https://i.pinimg.com/1200x/87/e7/21/87e72165d8b9d184bc9b39d88c4508f9.jpg" alt="Rinjani" class="w-full h-56 object-cover">
                     <div class="p-6">
@@ -139,7 +138,7 @@
                     </div>
                 </div>
 
-                <!-- Card 4 (Gn. Papandayan) -->
+                <!--Gn. Papandayan-->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300">
                     <img src="https://tribratanews.polri.go.id/web/image/blog.post/62406/image" alt="Papandayan" class="w-full h-56 object-cover">
                     <div class="p-6">
@@ -157,7 +156,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Card 5 (Gn. Sindoro) -->
+                <!--Gn. Sindoro-->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300">
                     <img src="https://gearberg.com/storage/mountain/galleries/673aa501b8ed3.png" alt="Sindoro" class="w-full h-56 object-cover">
                     <div class="p-6">
@@ -175,7 +174,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Card 6 (Gn. Kerinci) -->
+                <!--Gn. Kerinci-->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Uprising-mount_kerinci.jpg" alt="Kerinci" class="w-full h-56 object-cover">
                     <div class="p-6">
@@ -196,7 +195,7 @@
             </div>
         </section>
 
-        <!-- ================= GALERI PAGE ================= -->
+        <!--galeri-->
         <section id="galeri" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-black text-gray-900 mb-4">Galeri Petualangan</h2>
@@ -264,10 +263,10 @@
             </div>
         </section>
 
-        <!-- ================= BOOKING PAGE ================= -->
+        <!--halaman booking-->
         <section id="booking" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             
-            <!-- Panduan Cara Booking (Baru) -->
+            <!--panduan booking-->
             <div class="mb-10 bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
                 <h3 class="text-xl font-bold text-gray-900 mb-5 flex items-center">
                     <svg class="w-6 h-6 mr-2 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -306,7 +305,6 @@
                         <h2 class="text-2xl font-black text-gray-900 mb-2">Formulir Pendaftaran</h2>
                         <p class="text-sm text-gray-500 mb-8">Data harus sesuai KTP/Paspor untuk keperluan asuransi pendakian.</p>
 
-                        <!-- Dinamis Promo Box -->
                         <div class="mb-6 p-4 bg-brand-50 border border-brand-200 rounded-xl flex items-start">
                             <svg class="w-6 h-6 text-brand-600 mr-3 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -364,9 +362,7 @@
                                         <th class="p-4 font-semibold text-right">Aksi</th>
                                     </tr>
                                 </thead>
-                                <tbody id="booking-list" class="divide-y divide-gray-100 text-sm">
-                                    <!-- List akan di render via JS -->
-                                </tbody>
+                                <tbody id="booking-list" class="divide-y divide-gray-100 text-sm"></tbody>
                             </table>
                             <div id="empty-state" class="text-center py-16 text-gray-400">
                                 <svg class="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -390,7 +386,6 @@
         </div>
     </footer>
 
-    <!-- Custom Toast Notification Element -->
     <div id="toast">Notifikasi!</div>
 </body>
 </html>

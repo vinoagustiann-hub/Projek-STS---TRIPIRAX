@@ -1,8 +1,5 @@
-
-        /* Custom Animations & Styles */
         body { background-color: #f3f4f6; color: #1f2937; }
         
-        /* SPA Page Transitions - Diubah menjadi lebih halus dan tidak melompat */
         .page-section { display: none; animation: fadeIn 0.3s ease-out; }
         .page-section.active { display: block; }
         
@@ -11,7 +8,6 @@
             to { opacity: 1; }
         }
 
-        /* Gallery Styles (from original request) */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -57,7 +53,6 @@
         ::-webkit-scrollbar-thumb { background: #10b981; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #059669; }
 
-        /* Toast Notification */
         #toast {
             visibility: hidden;
             min-width: 250px;
